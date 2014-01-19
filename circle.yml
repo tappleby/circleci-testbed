@@ -1,0 +1,22 @@
+machine:
+  php:
+    version: 5.5.3
+  pre:
+    - gem install compass
+    - pear channel-discover pear.phing.info
+    - pear install phing/phing
+    - npm install -g grunt-cli bower
+
+dependencies:
+  pre:
+    - echo "Pre deps"
+
+  # Cache vendor dir
+  cache_directories:
+    - "vendor"
+
+
+## Test commands
+test:
+  override:
+    - echo "Test"
